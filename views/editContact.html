@@ -1,0 +1,32 @@
+<form id="editForm" ng-submit="formEdit()">
+	
+	<input type="text" ng-model="contact.id" placeholder="Enter id of contact to edit" ng-required="true" />
+	
+	<input list="editCon" ng-model="contact.value" placeholder="Select contact data to edit" />
+	
+	<input type="text" ng-model="contact.newValue" placeholder="Enter change here" />
+	
+	<datalist id="editCon">
+		<option value="first_name">First Name</option>
+		<option value="last_name">Last Name</option>
+		<option value="csv_phones">Phones</option>
+		<option value="csv_emails">Emails</option>
+		<option value="city">City</option>
+		<option value="country">Country</option>
+	</datalist>
+	<input type="submit" value="Edit" />
+</form>
+<div id="editsuccess">{{editsuccess}}</div>
+
+
+<button ng-click="show = 'true'">Show Countries</button>
+
+<div id="hidden" ng-show="show">
+<form ng-submit="pickCountry()">
+	<input type="text" ng-model="contact.id" placeholder="Enter contact id" />
+	<select ng-model="contact.country">
+	<option ng-repeat="country in countries" value="{{country.name}} - {{country.code}}">{{country.name}} - {{country.code}}
+</select>
+<input type="submit" value="submit" />
+</form>
+</div>

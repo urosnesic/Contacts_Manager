@@ -1,0 +1,15 @@
+<div class="login">
+	<form name="loginForm" ng-submit="formSubmit()" novalidate>
+		<p>
+			<input type="email" name="username" placeholder="enter email" ng-model="user.name" ng-required="true" />
+		</p>
+		<div ng-show="loginForm.username.$touched && loginForm.username.$invalid">
+			<small style="color: red; display: block; text-align: center;">Enter a valid email</small>
+		</div>
+		<p>
+			<input type="password" name="password" placeholder="enter password" ng-model="user.pass" ng-required="true" />
+		</p>
+		<input type="submit" value="Login" ng-disabled="loginForm.$invalid" />
+	</form>
+	<div>{{successedLogin}}</div>
+</div>

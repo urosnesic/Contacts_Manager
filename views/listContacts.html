@@ -1,0 +1,21 @@
+<p id="id_number">Click on the table to see the id number of your contacts</p>
+<table ng-click="showId()">
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Phones</th>
+		<th>Emails</th>
+		<th>City</th>
+		<th>Country</th>
+		<th ng-hide="show">Id</th>
+	</tr>
+	<tr ng-repeat="contact in contactList">
+		<td>{{contact.first_name}}</td>
+		<td>{{contact.last_name}}</td>
+		<td>{{contact.phones[0]}}</td>
+		<td>{{contact.emails[0]}}</td>
+		<td>{{contact.city}}</td>
+		<td>{{contact.country}}</td>
+		<td ng-hide="show">{{contact.id}}</td>
+	</tr>
+</table>

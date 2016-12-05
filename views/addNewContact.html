@@ -1,0 +1,28 @@
+<div class="login">
+	<h2>Enter your new contact here</h2>
+	<form name="addForm" ng-submit="contactSubmit()">
+		<p>
+			<input type="text" name="firstName" placeholder="first name" ng-model="contact.firstName" ng-required="true" />
+		</p>
+		<div ng-show="addForm.firstName.$touched && addForm.firstName.$invalid">
+			<small style="color: red; display: block; text-align: center;">Contact must have a name</small>
+		</div>
+		<p>
+			<input type="text" name="lastName" placeholder="last name" ng-model="contact.lastName" />
+		</p>
+		<p>
+			<input type="number" name="phone" placeholder="phone" ng-model="contact.phone" />
+		</p>
+		<p>
+			<input type="email" name="email" placeholder="email" ng-model="contact.email" />
+		</p>
+		<p>
+			<input type="text" name="city" placeholder="city" ng-model="contact.city" />
+		</p>
+		<p>
+			<input type="text" name="state" placeholder="state" ng-model="contact.country" />
+		</p>
+		<input type="submit" value="Submit" ng-disabled="addForm.firstName.$invalid" />
+	</form>
+	<div>{{addsuccess}}</div>
+</div>

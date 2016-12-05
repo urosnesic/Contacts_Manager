@@ -1,0 +1,9 @@
+<div class="login">
+	<form name="deleteForm" ng-submit="formDelete()">
+		<p>
+			<input type="text" name="deleteing" placeholder="enter id of contact to be deleted" ng-model="contact.id" ng-required="true" />
+		</p>
+		<input type="submit" value="Delete contact" ng-disabled="deleteForm.$invalid" />
+	</form>
+	<div>{{deleteSuccess}}</div>
+</div>

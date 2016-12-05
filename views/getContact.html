@@ -1,0 +1,35 @@
+<div id="getContact">
+	<form name="get_contact" ng-submit="getSubmit()">
+		<p>
+			<input type="text" name="contact" placeholder="Enter id number of the contact you whant to display" ng-model="contact.id" ng-required="true" />
+			<input type="submit" value="Get contact" ng-disabled="get_contact.$invalid" />
+		</p>
+	</form>
+</div>
+
+<table id="myContact" ng-show="prikaz">
+	<tr>
+		<td>First Name:</td>
+		<td>{{informations.first_name}}</td>
+	</tr>
+	<tr>
+		<td>Last Name:</td>
+		<td>{{informations.last_name}}</td>
+	</tr>
+	<tr>
+		<td>Phone:</td>
+		<td>{{informations.phones[0]}}</td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td>{{informations.emails[0]}}</td>
+	</tr>
+	<tr>
+		<td>City:</td>
+		<td>{{informations.city}}</td>
+	</tr>
+	<tr>
+		<td>Country:</td>
+		<td>{{informations.country}}</td>
+	</tr>
+</table>
