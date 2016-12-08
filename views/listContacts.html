@@ -1,4 +1,4 @@
-<p id="id_number">Click on the table to see the id number of your contacts</p>
+<p id="id_number">Click on the table to see the id number of your contacts  <br /> <input style="width:250px; padding: 10px 10px; margin-top: 15px; border-radius: 5px;" type="text" ng-model="search" placeholder="Enter name to find contact faster"> </p>
 <table ng-click="showId()">
 	<tr>
 		<th>First Name</th>
@@ -9,7 +9,7 @@
 		<th>Country</th>
 		<th ng-hide="show">Id</th>
 	</tr>
-	<tr ng-repeat="contact in contactList">
+	<tr ng-repeat="contact in contactList | filter: search">
 		<td>{{contact.first_name}}</td>
 		<td>{{contact.last_name}}</td>
 		<td>{{contact.phones[0]}}</td>
